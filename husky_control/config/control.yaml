@@ -2,6 +2,11 @@ husky_joint_publisher:
   type: "joint_state_controller/JointStateController"
   publish_rate: 50
 
+stick_move_joint_position_controller:
+  type: effort_controllers/JointPositionController
+  joint: stick_move_joint
+  pid: {p: 100.0, i: 0.01, d: 10.0}
+
 husky_velocity_controller:
   type: "diff_drive_controller/DiffDriveController"
   left_wheel: ['front_left_wheel', 'rear_left_wheel']
